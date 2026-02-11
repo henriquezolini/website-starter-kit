@@ -1,0 +1,1 @@
+<script src="js/functions<?php echo MODE == 'prd' ? '.min' : ''; ?>.js"></script>
