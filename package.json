@@ -1,0 +1,15 @@
+{
+  "name": "website-starter-kit",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "watch": "onchange \"css/**/!(*.min).css\" \"js/**/!(*.min).js\" -- sh -c 'esbuild \"$1\" --minify --outfile=\"${1%.*}.min.${1##*.}\"' -- {{changed}}"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "esbuild": "^0.27.3",
+    "onchange": "^7.1.0"
+  }
+}
