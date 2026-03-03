@@ -1,11 +1,5 @@
 # Website Starter Kit
 
-Pacote inicial para desenvolvimento de websites com PHP, estrutura organizada e recursos prontos para produção.
-
----
-
-## Objetivo
-
 Pacote inicial para desenvolvimento de websites, com estrutura padronizada e recursos essenciais já configurados.
 
 ---
@@ -101,25 +95,60 @@ sudo service apache2 restart
 
 ## Estrutura de Rotas
 
-O sistema utiliza roteamento baseado em pastas dentro de `pages`.
+O projeto utiliza roteamento baseado em pastas dentro do diretório `pages`.  
+Cada pasta representa uma URL automaticamente, mantendo a estrutura simples e organizada.
 
-Exemplo:
+### Exemplo
 
 ```
 pages/
- ├── index/
- ├── sobre/
- └── contato/
+ ├── blog/index.php        → https://domain.com/blog/
+ ├── contato/index.php     → https://domain.com/contato/
+ ├── sobre/index.php       → https://domain.com/sobre/
+ ├── post/[slug].php       → https://domain.com/post/123/
+ └── index.php             → https://domain.com/
 ```
 
-Cada pasta representa automaticamente uma rota:
+### Como funciona
 
-- /
-- /sobre
-- /contato
+- `index.php` dentro de uma pasta representa a rota daquela pasta.
+- A raiz do projeto é controlada pelo `pages/index.php`.
+- Arquivos dinâmicos como `[slug].php` permitem capturar parâmetros da URL, possibilitando páginas dinâmicas como posts, produtos ou categorias.
+
+Essa estrutura facilita a organização do projeto e torna as URLs mais limpas e amigáveis.
+
+```
 
 ---
 
-## Deploy Automatizado
+## Deploy FTP Automatizado
 
-O projeto já possui GitHub Action configurada para realizar deploy automático via FTP após push na branch principal.
+O projeto já conta com GitHub Actions configurado para realizar o deploy automático via FTP sempre que houver push na branch principal.
+
+Para configurar com seus dados, edite o arquivo:
+
+```
+
+.github/workflows/main.yml
+
+````
+
+Atualize as informações do servidor:
+
+```yml
+server: ftp.example.com
+username: webmaster@example.com
+password: ${{ secrets.ftp_password }}
+server-dir: ./
+````
+
+Depois, adicione a variável `ftp_password` nas Secrets do seu repositório:
+
+1. Acesse o repositório no GitHub
+2. Vá em **Settings**
+3. Clique em **Secrets and variables**
+4. Selecione **Actions**
+5. Clique em **New repository secret**
+6. Crie a secret com o nome `ftp_password` e informe a senha do seu FTP
+
+Após isso, o deploy será feito automaticamente a cada push na branch configurada.
