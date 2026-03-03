@@ -2,26 +2,19 @@
 
 Pacote inicial para desenvolvimento de websites, com estrutura padronizada e recursos essenciais já configurados.
 
----
-
 ## Conteúdo
 
 - Arquitetura padronizada
-- URLs amigáveis com folder friendly router  
-  O roteamento funciona de acordo com as pastas criadas dentro de `pages`, semelhante ao folder router do Next.js.
+- URLs amigáveis com folder friendly router de acordo com as pastas criadas dentro de `pages`
 - Minificador automático de arquivos CSS e JS
 - Arquitetura preparada para SEO
 - Função pronta para envio de e-mails utilizando PHPMailer
 - GitHub Actions com workflow configurado para upload via FTP
 
----
-
 ## Requisitos
 
 - PHP > 8.0
 - Apache com mod_rewrite habilitado
-
----
 
 ## Instalação
 
@@ -36,8 +29,6 @@ Instalar dependências PHP:
 ```bash
 composer install
 ```
-
----
 
 ## Configurações iniciais
 
@@ -57,8 +48,6 @@ includes/header.php
 includes/scripts.php
 ```
 
----
-
 ## Utilidades
 
 ### Minificação automática
@@ -68,30 +57,6 @@ npm run watch
 ```
 
 Esse comando monitora automaticamente as pastas `css` e `js`, gerando as versões minificadas dos arquivos.
-
----
-
-## Comandos úteis Apache
-
-Editar php.ini:
-
-```
-sudo vi /etc/php/8.3/apache2/php.ini
-```
-
-Editar configuração do Virtual Host:
-
-```
-/etc/apache2/sites-available/000-default.conf
-```
-
-Reiniciar Apache:
-
-```
-sudo service apache2 restart
-```
-
----
 
 ## Estrutura de Rotas
 
@@ -146,3 +111,23 @@ Depois, adicione a variável `ftp_password` nas Secrets do seu repositório:
 6. Crie a secret com o nome `ftp_password` e informe a senha do seu FTP
 
 Após isso, o deploy será feito automaticamente a cada push na branch configurada.
+
+## Comandos úteis Apache
+
+Editar php.ini:
+
+```
+sudo vi /etc/php/8.3/apache2/php.ini
+```
+
+Editar configuração do Virtual Host:
+
+```
+/etc/apache2/sites-available/000-default.conf
+```
+
+Reiniciar Apache:
+
+```
+sudo service apache2 restart
+```
