@@ -125,7 +125,6 @@ Para configurar com seus dados, edite o arquivo:
 
 ```
 .github/workflows/main.yml
-
 ```
 
 Atualize as informações do servidor:
