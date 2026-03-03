@@ -2,6 +2,8 @@
 
 Pacote inicial para desenvolvimento de websites, com estrutura padronizada e recursos essenciais já configurados.
 
+---
+
 ## Conteúdo
 
 - Arquitetura padronizada
@@ -12,10 +14,14 @@ Pacote inicial para desenvolvimento de websites, com estrutura padronizada e rec
 - Função pronta para envio de e-mails utilizando PHPMailer
 - GitHub Actions com workflow configurado para upload via FTP
 
+---
+
 ## Requisitos
 
 - PHP > 8.0
 - Apache com mod_rewrite habilitado
+
+---
 
 ## Instalação
 
@@ -30,6 +36,8 @@ Instalar dependências PHP:
 ```bash
 composer install
 ```
+
+---
 
 ## Configurações iniciais
 
@@ -49,6 +57,8 @@ includes/header.php
 includes/scripts.php
 ```
 
+---
+
 ## Utilidades
 
 ### Minificação automática
@@ -58,6 +68,8 @@ npm run watch
 ```
 
 Esse comando monitora automaticamente as pastas `css` e `js`, gerando as versões minificadas dos arquivos.
+
+---
 
 ## Comandos úteis Apache
 
@@ -78,6 +90,8 @@ Reiniciar Apache:
 ```
 sudo service apache2 restart
 ```
+
+---
 
 ## Estrutura de Rotas
 
@@ -103,8 +117,6 @@ pages/
 
 Essa estrutura facilita a organização do projeto e torna as URLs mais limpas e amigáveis.
 
-```
-
 ## Deploy FTP Automatizado
 
 O projeto já conta com GitHub Actions configurado para realizar o deploy automático via FTP sempre que houver push na branch principal.
@@ -112,10 +124,9 @@ O projeto já conta com GitHub Actions configurado para realizar o deploy autom�
 Para configurar com seus dados, edite o arquivo:
 
 ```
-
 .github/workflows/main.yml
 
-````
+```
 
 Atualize as informações do servidor:
 
@@ -124,7 +135,7 @@ server: ftp.example.com
 username: webmaster@example.com
 password: ${{ secrets.ftp_password }}
 server-dir: ./
-````
+```
 
 Depois, adicione a variável `ftp_password` nas Secrets do seu repositório:
 
